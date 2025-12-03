@@ -1,0 +1,14 @@
+{
+	"n_targets": 9878,
+	"n_bootstraps": 0,
+	"n_processed": 1515000,
+	"n_pseudoaligned": 321945,
+	"n_unique": 1111,
+	"p_pseudoaligned": 21.3,
+	"p_unique": 0.1,
+	"kallisto_version": "0.51.1",
+	"index_version": 13,
+	"k-mer length": 31,
+	"start_time": "Fri Oct 24 17:52:34 2025",
+	"call": "/home/vbeilins/miniconda3/envs/kb_env/lib/python3.12/site-packages/kb_python/bins/linux/kallisto/kallisto bus -i index.idx -o remultiplex_timing_results -x 0,0,8:-1,-1,-1:0,8,108 -t 10 --num /resnick/groups/carnegie_poc/mcfallngai-lab/bacterial_sc/matqseq/remultiplex_reads/remultiplexed_output.fastq.gz"
+}

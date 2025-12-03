@@ -1,5 +1,2 @@
 .DS_Store
-MATQseq
 *.bus
-*.mtx
-*.h5ad
