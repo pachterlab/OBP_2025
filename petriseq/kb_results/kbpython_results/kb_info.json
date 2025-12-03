@@ -1,0 +1,32 @@
+{
+    "workdir": "/resnick/groups/carnegie_poc/mcfallngai-lab/bacterial_sc/petriseq/kb",
+    "version": "0.29.5",
+    "kallisto": {
+        "path": "/home/vbeilins/miniconda3/envs/kb_env/lib/python3.12/site-packages/kb_python/bins/linux/kallisto/kallisto",
+        "version": "0.51.1"
+    },
+    "bustools": {
+        "path": "/home/vbeilins/miniconda3/envs/kb_env/lib/python3.12/site-packages/kb_python/bins/linux/bustools/bustools",
+        "version": "0.45.1"
+    },
+    "start_time": "2025-10-26T13:12:09.453081",
+    "end_time": "2025-10-26T13:14:20.957138",
+    "elapsed": 131.504057,
+    "call": "/home/vbeilins/miniconda3/envs/kb_env/bin/kb count -w onlist_joined_petri.txt -x 0,7,14,0,29,36,0,50,58:0,0,7:1,0,17 -t 10 -m 50G -i index.idx -g t2g.txt -c1 c1.txt -c2 c2.txt --workflow nac --tmp tmp -o kbpython_results --h5ad --num /resnick/groups/carnegie_poc/mcfallngai-lab/bacterial_sc/petriseq/renamed_reads/ecolisamp_S1_L001_R1_001.fastq.gz /resnick/groups/carnegie_poc/mcfallngai-lab/bacterial_sc/petriseq/renamed_reads/ecolisamp_S1_L001_R2_001.fastq.gz",
+    "commands": [
+        "kallisto bus -i index.idx -o kbpython_results -x 0,7,14,0,29,36,0,50,58:0,0,7:1,0,17 -t 10 --num /resnick/groups/carnegie_poc/mcfallngai-lab/bacterial_sc/petriseq/renamed_reads/ecolisamp_S1_L001_R1_001.fastq.gz /resnick/groups/carnegie_poc/mcfallngai-lab/bacterial_sc/petriseq/renamed_reads/ecolisamp_S1_L001_R2_001.fastq.gz",
+        "bustools sort -o tmp/output.s.bus -T tmp -t 10 -m 50G --no-flags kbpython_results/output.bus",
+        "bustools inspect -o kbpython_results/inspect.json -w onlist_joined_petri.txt tmp/output.s.bus",
+        "bustools correct -o tmp/output.s.c.bus -w onlist_joined_petri.txt tmp/output.s.bus",
+        "bustools sort -o kbpython_results/output.unfiltered.bus -T tmp -t 10 -m 50G tmp/output.s.c.bus",
+        "bustools count -o kbpython_results/counts_unfiltered/cells_x_genes -g t2g.txt -e kbpython_results/matrix.ec -t kbpython_results/transcripts.txt -s c2.txt --genecounts --umi-gene kbpython_results/output.unfiltered.bus"
+    ],
+    "runtimes": [
+        40.4581573009491,
+        32.472747564315796,
+        2.6367554664611816,
+        6.812735080718994,
+        40.775958776474,
+        3.636495351791382
+    ]
+}

@@ -1,0 +1,14 @@
+{
+	"n_targets": 9279,
+	"n_bootstraps": 0,
+	"n_processed": 50774921,
+	"n_pseudoaligned": 27487214,
+	"n_unique": 0,
+	"p_pseudoaligned": 54.1,
+	"p_unique": 0.0,
+	"kallisto_version": "0.51.1",
+	"index_version": 13,
+	"k-mer length": 15,
+	"start_time": "Sun Oct 26 13:12:11 2025",
+	"call": "/home/vbeilins/miniconda3/envs/kb_env/lib/python3.12/site-packages/kb_python/bins/linux/kallisto/kallisto bus -i index.idx -o kbpython_results -x 0,7,14,0,29,36,0,50,58:0,0,7:1,0,17 -t 10 --num /resnick/groups/carnegie_poc/mcfallngai-lab/bacterial_sc/petriseq/renamed_reads/ecolisamp_S1_L001_R1_001.fastq.gz /resnick/groups/carnegie_poc/mcfallngai-lab/bacterial_sc/petriseq/renamed_reads/ecolisamp_S1_L001_R2_001.fastq.gz"
+}

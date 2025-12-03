@@ -1,0 +1,156 @@
+seqspec_version: 0.3.2
+assay_id: PETRIseq
+name: PETRIseq
+doi: https://doi.org/10.1038/s41564-020-0729-6
+date: 25 May 2020
+description: split-pool ligation-based transcriptome sequencing
+modalities:
+- rna
+lib_struct: https://www.nature.com/articles/s41564-020-0729-6#Abs1
+sequence_protocol: NextSeq 500
+sequence_kit: NextSeq 550 reagents
+library_protocol: PETRIseq
+library_kit: Nextera XT
+sequence_spec:
+- read_id: R1.fastq.gz
+  name: Read 1
+  modality: rna
+  primer_id: Read_1_primer
+  min_len: 58
+  max_len: 58
+  strand: pos
+  files:
+  - file_id: R1.fastq.gz
+    filename: R1.fastq.gz
+    filetype: gz
+    filesize: 0
+    url: ''
+    urltype: local
+    md5: ''
+- read_id: R2.fastq.gz
+  name: Read 2
+  modality: rna
+  primer_id: Read_2_primer
+  min_len: 17
+  max_len: 17
+  strand: neg
+  files:
+  - file_id: R2.fastq.gz
+    filename: R2.fastq.gz
+    filetype: gz
+    filesize: 0
+    url: ''
+    urltype: local
+    md5: ''
+library_spec:
+- region_id: rna
+  region_type: rna
+  name: rna
+  sequence_type: joined
+  sequence: XXXXXXXNNNNNNNGGTCCTTGGCTTCGCNNNNNNNCCTCCTACGCCAGANNNNNNNNX
+  min_len: 59
+  max_len: 158
+  onlist: null
+  regions:
+  - region_id: Read_1_primer
+    region_type: Read_1_primer
+    name: r1_primer
+    sequence_type: fixed
+    sequence: ''
+    min_len: 0
+    max_len: 0
+    onlist: null
+    regions: []
+  - region_id: umi
+    region_type: umi
+    name: umi
+    sequence_type: random
+    sequence: XXXXXXX
+    min_len: 7
+    max_len: 7
+    onlist: null
+    regions: []
+  - region_id: Round_3_BC
+    region_type: barcode
+    name: Round_3_BC
+    sequence_type: onlist
+    sequence: NNNNNNN
+    min_len: 7
+    max_len: 7
+    onlist:
+      file_id: cleaned_BC3.txt
+      filename: cleaned_BC3.txt
+      filetype: ''
+      filesize: 0
+      url: ''
+      urltype: local
+      md5: 484a5af364656997fe5df31eda9a0fff
+    regions: []
+  - region_id: linker_1
+    region_type: linker
+    name: linker_1
+    sequence_type: fixed
+    sequence: GGTCCTTGGCTTCGC
+    min_len: 15
+    max_len: 15
+    onlist: null
+    regions: []
+  - region_id: Round_2_BC
+    region_type: barcode
+    name: Round_2_BC
+    sequence_type: onlist
+    sequence: NNNNNNN
+    min_len: 7
+    max_len: 7
+    onlist:
+      file_id: cleaned_BC2.txt
+      filename: cleaned_BC2.txt
+      filetype: ''
+      filesize: 0
+      url: ''
+      urltype: local
+      md5: 4cb33bd4a5bdc67e8371a01a66f350d8
+    regions: []
+  - region_id: linker_2
+    region_type: linker
+    name: linker_2
+    sequence_type: fixed
+    sequence: CCTCCTACGCCAGA
+    min_len: 14
+    max_len: 14
+    onlist: null
+    regions: []
+  - region_id: Round_1_BC
+    region_type: barcode
+    name: Round_1_BC
+    sequence_type: onlist
+    sequence: NNNNNNNN
+    min_len: 8
+    max_len: 8
+    onlist:
+      file_id: cleaned_BC1.txt
+      filename: cleaned_BC1.txt
+      filetype: ''
+      filesize: 0
+      url: ''
+      urltype: local
+      md5: 4704e89bfbcd3dd1f1e0057d479e7fff
+    regions: []
+  - region_id: cDNA
+    region_type: cdna
+    name: cDNA
+    sequence_type: random
+    sequence: X
+    min_len: 1
+    max_len: 100
+    onlist: null
+    regions: []
+  - region_id: Read_2_primer
+    region_type: Read_2_primer
+    name: r2_primer
+    sequence_type: fixed
+    sequence: ''
+    min_len: 0
+    max_len: 0
+    onlist: null
+    regions: []
